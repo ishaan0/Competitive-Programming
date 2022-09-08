@@ -1,0 +1,9 @@
+D(n) = derangment for n people
+
+D(n) = (n-1) * D(n-1)  // nth person choose xth hat from n-1 people and xth person won't use nth person hat
+	 + 
+ 	 (n-1) * D(n-2) // nth person choose xth hat from n-1 people and xth person will use nth person hat
+
+if array is m size but we have to derange n number where n < m
+
+D(n) = (n-1) * D(n-1) + (n-1) * D(n-2) + (m-n) * D(n-1)

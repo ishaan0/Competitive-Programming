@@ -1,0 +1,97 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define     Boost               ios::sync_with_stdio(false),cin.tie(NULL),cout.tie(NULL)
+#define     all(cont)           cont.begin(),cont.end()
+#define     rall(cont)          cont.rbegin(),cont.rend()
+#define     foreach(cont)       for(auto &val: cont)
+#define     dbg(args...)        do {   cerr << #args << "-> " ;  show(args); } while(0); cerr<< endl ;
+#define     TS                  template < typename T >
+#define     TP                  template < typename F, typename S >
+#define     TM                  template<typename T1, typename... T2>
+#define     flush               cin.ignore(numeric_limits<streamsize>::max(), '\n')
+#define     Case                cout<< "Case "<< ++cs << ": "
+#define     inf                 LONG_LONG_MIN
+#define     INF                 LONG_LONG_MAX
+#define     mp                  make_pair
+#define     pb                  push_back
+#define     ff                  first
+#define     ss                  second
+
+typedef     long long                   ll ;
+typedef     unsigned long long          ull ;
+typedef     pair <int, int>             pii ;
+
+/** Debugging Tool **/
+TS void show(const T& v) {    cerr << v << ' ' ;}
+TM void show(const T1& first,const T2&... rest){show(first);show(rest...);}
+TP ostream& operator<<(ostream& os,const pair<F,S>& p){return os<<"("<<p.ff<<", "<<p.ss<<")";}
+TS ostream& operator<<(ostream& os,const vector<T>& v){os << "{"; typename vector< T >::const_iterator it;
+    for(it=v.begin();it!=v.end();it++){if( it != v.begin() )os<<", ";os<<*it;}return os<<"}";}
+TS ostream& operator<<(ostream& os,const set<T>& v){os<<"[";typename set<T>::const_iterator it;
+    for(it=v.begin();it!=v.end();it++){if(it!=v.begin())os<<", ";os<<*it;}return os<<"]";}
+TP ostream& operator<<(ostream& os,const map<F,S>& v){os<<"[";typename map<F,S>::const_iterator it;
+    for(it=v.begin();it!=v.end();it++){if(it!=v.begin())os<<", ";os<<it->ff<<" = "<<it->ss;}return os<<"]";}
+/** Ends **/
+
+
+
+
+
+//#define DEBUG
+int main()
+{
+    Boost;
+
+    #ifdef DEBUG
+    freopen("input.txt","r",stdin);    // Read
+    freopen("output.txt","w",stdout);  // Write
+    #endif
+
+    int t ;
+    cin>> t ;
+
+    while(t--){
+        int n ;
+        cin>> n ;
+        vector<pii > arr(n) ;
+        for(int i=0; i<n; i++){
+            cin>> arr[i].ff ;
+            arr[i].ss = i+1 ;
+        }
+
+        sort(all(arr)) ;
+        int prev = arr[0].ff , pos = arr[0].ss ;
+        ll ans = 1 ;
+        for(int i=1; i<n; i++){
+            if(arr[i].ff == prev) continue ;
+            int j = i ;
+            while(j<n && arr[j].ff == arr[i].ff && arr[j].ss < pos)
+                j++ ;
+
+            if(j==n){
+                ans++ ;
+                break ;
+            }
+            if(arr[j].ff != arr[i].ff){
+                ans++ ;
+                prev = arr[i].ff ;
+                pos = arr[i].ss ;
+                i = j-1 ;
+            }
+            else{
+                prev = arr[j].ff ;
+                pos = arr[j].ss ;
+                i = j ;
+            }
+
+        }
+
+        cout<< ans << endl ;
+
+    }
+
+
+    return 0;
+}
+

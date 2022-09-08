@@ -1,0 +1,8 @@
+BFS -> Breadth First Search
+
+1. Shortest path algorithm .
+2. Works on unweighted graph .
+3. Complexity : O( v + e ) .
+4. Get number of component .
+5. Find shortest path for weight 0,1 called 0-1 BFS .
+6. Find shortest cycle in unweighted graph .  

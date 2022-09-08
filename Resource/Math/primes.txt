@@ -1,0 +1,25 @@
+By using prime we can solve many problems .
+There are a lot of way to get prime but among
+them sieve is the faster way to get n number of primes .
+
+Sieve time : nloglogn
+
+x = p1^a1 * p2^a2 * p3^a3 .... pk^ak
+here p1, p2, ... pk are primes and a1, a2, ... ak are their powers .
+
+Number of factor -> PROD ( ai + 1 ) ; where ai are prime power .
+Sum of factor -> 	PROD ( ( pi^(ai+1) - 1 )/(pi-1) ) ;
+Product of factor -> PROD ( n^(nod(n)/2) ) ;
+
+Density of prime -> n / ln(n) ;
+
+Conjecture : 
+
+Goldbach's conjecture -> Every even integer  > 2 can be represent as the sum
+						 of two prime . means n = a + b ; where a , b are prime 
+
+Twin prime conjecture -> There are infinite number of prime of form {p , p + 2}
+						 where p and p + 2 are prime .
+
+Legendre's conjecture -> There is always prime between n^2 and (n+1)^2 where
+						 n is a positive integer .

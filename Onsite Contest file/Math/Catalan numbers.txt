@@ -1,0 +1,12 @@
+some catalan numbers are ( 0 based index )
+1, 1, 2, 5, 14, 42, 132, 429, 1430, ...
+
+Recursive formula
+
+C(0) = C(1) = 1 
+C(n) = sum( k=0 to n-1 ) ( C(k) * C(n-1-k) ) where n >= 2 
+
+mathematical formula
+
+C(n) = 2nCn - 2nCn-1
+     = 1/(n+1) * 2nCn

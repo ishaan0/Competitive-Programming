@@ -1,0 +1,13 @@
+Binary Search is a seach method which work in logarithomic time . But to apply binary search the element must have binary property .
+Binary property means from any position if you go right you will get bigger value and if you go left will get smaller value and
+vice versa . So we pick a mid and only use half side of the element . so in each time we cut out some value which is 
+n/2 , n/4 , n/8 , n/16 ... n/2^x ... which is a logarithomic formula , so it take logn time search a value .
+
+getting mid we need to takecare overflow instead of using mid = (lo+hi)/2  we should use mid = lo + (hi-lo)/2
+
+some type of way to code binary search : 
+
+1. while( hi <= lo ) .... lo = mid + 1 , hi = mid -1... ans is the output ;
+2. while( hi < lo ) ..... lo = mid+1, hi = mid , mid = lo+(hi-lo)/2 .... hi is the output ;
+3. while( hi < lo ) ..... lo = mid, hi = mid-1 , mid = lo+(hi-lo+1)/2 .... lo is the output ;
+4. while( hi-lo < 1) .... lo = mid , hi = mid , but lo = -1 , hi = n .... lo is the output ;

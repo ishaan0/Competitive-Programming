@@ -1,0 +1,11 @@
+There are 4 types of Edges .
+	
+1. Tree edge : those edge which we find on a dfs traversal , which form a tree so it is called tree edge .
+
+2. Forward edge : if u and v are not directly connect means this is not tree edge but v is descendant of u 
+		  then u to v is a forward edge .
+
+3. Back edge : if we consider u and v where v is ancestor of u then this is call back edge .
+
+4. Cross edge : if we consider u and v , they do not have any ancestor , desendant relation
+		then their edge can be called cross edge . 

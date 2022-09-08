@@ -1,0 +1,26 @@
+There are a lot of theorem and conjecture which are very useful
+for competitive programming .
+
+Fermat's little Theorem :  a ^ (p - 1) = 1 ( % p ) ; where p is prime
+
+Euler's Theorem : a ^ phi(mod) = 1 ( % mod) where a and mod are co prime
+
+Lagrange's Theorem : Every positive integer can be represent as the
+				   sum of four squares . n = a^2 + b^2 + c^2 + d^2
+
+Zeckendorf's theorem : Every positive integer has a unique representation a
+					   sum of fibonacci number such that no two are same
+					   or consecutive . 74 = 55 + 13 + 5 + 1
+
+Pythagorean triples  : A pythagorean triple is a triple (a, b, c) where
+					   a^2 + b^2 = c^2 . Which means there is a right 
+					   triangle . if (a,b,c) is triple then (ka, kb, kc)
+					   are also phthagorean triple . A pythagorean triple
+					   is primitive is a, b, c are co prime . 
+
+Euclid's formula 	 : Each primitive pythagorean triple is of form 
+					   ( n^2 - m^2 , 2*n*m , n^2 + m^2 ) ; where 0 < m < n , 
+					   and n , m are co prime and one of n, m is even .
+
+Wilson’s theorem 	 : A number n is prime exacly when
+					   ( n - 1 )! % n = n - 1

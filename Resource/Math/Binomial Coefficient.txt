@@ -1,0 +1,53 @@
+There are some way to calculate nCr of a number .
+Based on their constrains we use one of them which
+is more preferable . They do have some advantages and 
+disadvantages compare to each other .
+
+Basic bruteforce : 
+	we just use nCr formula to calculate nCr .
+	nCr = n!/( (n-r)! * r! )
+	so we will use a loop from n-r+1 to n and
+	calculate result by multiplication and division.
+	complexity : n
+
+Dp approach : 
+	we can use this method when n <= 1000 . after 
+	pre calculate all nCr , then we need constant
+	time to calculate it . Here we basically construct
+	the pascal triangle to get nCr .
+	nCr = n-1Cr-1 + n-1Cr .
+	complexity : n * r
+
+nCr % p :
+	when we need nCr % p where p is prime and 
+	n,r <= 1e7 we can precalculate all factorial
+	and inverse factorial in linear time then 
+	we will get nCr in constant time . To get
+	inverse modulo we can use fermet theorem .
+	complexity : preCal -> n , nCr -> constant
+
+nCr % c :
+	when modulo element is not prime and its prime
+	factor are square free then we can use above 
+	approach for every prime of c then we will 
+	merge them using CRT ( chinease reminder theorem )
+	complexity : (primeCnt * n ) + crt 
+	
+nCr % p : 
+	here p is small but n, r are large . so we need
+	lucas theorem to solve it . we can convert
+	n,r to p base . then for ith digit of n and r
+	we calculate theri niCri and multiply those
+	result for every ith nCr this result is 
+	same as nCr % p .
+
+There are a intresting problem where nCr % p^x and p is 
+composite and it is not square free , so we need another
+approach to solve it .
+we need a p_free function which will make any number
+p free so that it will be co prime with p and we will
+able to calculate it .
+
+nCr % p -> p_free(n)/(p_free(n-r)*p_free(r))*p^(u-v-w)
+where n has u time p , r has v time , n-r has w times .
+to get p_free number we need to call a recursive function.
